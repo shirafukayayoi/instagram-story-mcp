@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instagram-story-mcp"
+version = "0.1.0"
+description = "HTTP Relayを利用するInstagramストーリー用stdio MCP"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE.md"]
+dependencies = [
+    "mcp==1.26.0",
+    "yt-dlp[default,curl-cffi]>=2026.10.26",
+    "Pillow>=11,<13",
+]
+
+[project.scripts]
+instagram-story-mcp = "instagram_story_mcp.server:main"
+
+[project.urls]
+Repository = "https://github.com/shirafukayayoi/instagram-story-mcp"
+Issues = "https://github.com/shirafukayayoi/instagram-story-mcp/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
